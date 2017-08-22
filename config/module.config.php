@@ -18,7 +18,24 @@
  */
 
 return [
-
+    'asset_manager' => [
+        'resolver_configs' => [
+            'aliases' => [
+                'modules/rcm-google-search-box/' => __DIR__ . '/../public/',
+            ],
+            'collections' => [
+                'modules/rcm/modules.js' => [
+                    'modules/rcm-google-search-box/rcm-google-search-box.js'
+                ],
+                'modules/rcm/modules.css' => [
+                    'modules/rcm-google-search-box/style.css'
+                ],
+                'modules/rcm-admin/admin.js' => [
+                    'modules/rcm-google-search-box/edit.js',
+                ],
+            ],
+        ],
+    ],
     'rcmPlugin' => [
         'RcmGoogleSearchBox' => [
             'type' => 'Common',
@@ -42,24 +59,6 @@ return [
     'view_manager' => [
         'template_path_stack' => [
             __DIR__ . '/../view',
-        ],
-    ],
-    'asset_manager' => [
-        'resolver_configs' => [
-            'aliases' => [
-                'modules/rcm-google-search-box/' => __DIR__ . '/../public/',
-            ],
-            'collections' => [
-                'modules/rcm/modules.js' => [
-                    'modules/rcm-google-search-box/rcm-google-search-box.js'
-                ],
-                'modules/rcm/modules.css' => [
-                    'modules/rcm-google-search-box/style.css'
-                ],
-                'modules/rcm-admin/admin.js' => [
-                    'modules/rcm-google-search-box/edit.js',
-                ],
-            ],
         ],
     ],
 ];
